@@ -9,7 +9,7 @@ I define a **sequential forward selection** function, that chooses the feature w
 
 Then I find the minimum error corresponding to **different number of components**. The results are shown in the graph below:
 
-![My Image](images/3.png)
+![My Image](3.png)
 
 <h4>The SBE function:</h4>
 
@@ -17,7 +17,7 @@ I define a **sequential backward elimination** function, that chooses the featur
 
 Then I find the minimum error corresponding to different number of components. The results are shown in the graph below:
 
-![My Image](images/4.png)
+![My Image](4.png)
 
 <h4>Comparison of the methods:</h4>
 
