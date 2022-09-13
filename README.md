@@ -5,9 +5,19 @@ I preprocess the data to normalize it using **MinMaxScaler**, and then split it 
 
 <h4>The SFS function:</h4>
 
-I define a **sequential forward selection** function, that chooses the feature with the **minimum mean square of errors** at each iteration, and returns the selected features and list of errors.
+I define a **sequential forward selection** function, that chooses the feature with the **minimum mean square of errors** at each iteration, and returns the selected features and list of errors. The function in the above code:
 
-Then I find the minimum error corresponding to **different number of components**. The results are shown in the graph below:
+```ruby
+def SFS(training_data, testing_data, training_labels, testing_labels)
+```
+
+Then I find the minimum error corresponding to **different number of components**.
+
+```ruby
+error = mean_squared_error(testing_labels, NB.predict(testing_data[:, index_list]))
+```
+
+The results are shown in the graph below:
 
 ![My Image](3.png)
 
@@ -15,7 +25,16 @@ Then I find the minimum error corresponding to **different number of components*
 
 I define a **sequential backward elimination** function, that chooses the feature with the **max mean square of errors** at each iteration, and returns the selected features to be removed and list of errors as below:
 
+```ruby
+def SBE(training_data, testing_data, training_labels, testing_labels)
+```
+
 Then I find the minimum error corresponding to different number of components. The results are shown in the graph below:
+```ruby
+NB = MultinomialNB()
+NB.fit(np.delete(training_data, index_list, axis=1), training_labels)
+error = mean_squared_error(testing_labels, NB.predict(np.delete(testing_data, index_list, axis=1)))
+```
 
 ![My Image](4.png)
 
